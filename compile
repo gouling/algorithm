@@ -1,0 +1,10 @@
+#!/bin/bash
+
+phpize
+./configure --enable-algorithm
+make
+make install
+
+ls -a | grep -vE '.git|algorithm.c|calendar.c|php_algorithm.h|config.m4|compile' | xargs rm -rf >/dev/null 2>&1
+
+systemctl restart php-fpm;
