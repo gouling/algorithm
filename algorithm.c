@@ -55,7 +55,7 @@ PHP_FUNCTION(getAverageCapitalPlusInterest) {
 	    add_assoc_double(set,"cash",principal); //本期还款本金
 	    add_assoc_double(set,"apr",total-principal);    //本期还款利息=每期还款金额-本期还款金额
 	    
-	    add_index_zval(list, index, set);
+	    add_index_zval(list, index+1, set);
 	}
 
     RETURN_ZVAL(list,1,0);
@@ -118,7 +118,7 @@ PHP_FUNCTION(getAverageCapital) {
 	    add_assoc_double(set,"cash",principal); //本期还款本金
 	    add_assoc_double(set,"apr",interest);    //本期还款利息=每期还款金额-本期还款金额
 	    
-	    add_index_zval(list, index, set);
+	    add_index_zval(list, index+1, set);
 	}
 
     RETURN_ZVAL(list,1,0);
